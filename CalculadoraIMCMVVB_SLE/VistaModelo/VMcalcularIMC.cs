@@ -63,26 +63,24 @@ namespace CalculadoraIMCMVVB_SLE.VistaModelo
         public void BtnCalcularIMC()
         {
             CalcularIMC(Peso,Altura);
-            string resultado = "";
             if (Imc < 18.5)
             {
-                resultado = "Bajo peso";
+                Mensaje = "Bajo peso";
             }
             else if (Imc > 18.5 && Imc < 24.9)
             {
-                resultado = "Peso normal";
+                Mensaje = "Peso normal";
             }
             else if (Imc >= 24.9 && Imc <= 29.9)
             {
-                resultado = "Sobre peso";
+                Mensaje = "Sobre peso";
             }
             else if (Imc > 29.9)
             {
-                resultado = "Obesidad";
+                Mensaje = "Obesidad";
             }
 
 
-            DisplayAlert("Resultado: ", Mensaje, "Quitar");
 
 
             
@@ -92,7 +90,7 @@ namespace CalculadoraIMCMVVB_SLE.VistaModelo
 
         #region COMANDOS
         public ICommand ProcesoAsyncommand => new Command(async () => await ProcesoAsyncrono());
-        public ICommand ProcesoSimpcommand => new Command(ProcesoSimple);
+        public ICommand CalcularIMCcommand => new Command(BtnCalcularIMC);
         #endregion
 
 
