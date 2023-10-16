@@ -16,7 +16,7 @@ namespace CalculadoraIMCMVVB_SLE.Vistas
         public VcalcularIMC()
         {
             InitializeComponent();
-            BindingContext = new VMcalcularIMC(navigation);
+            BindingContext = new VMcalcularIMC(Navigation);
         }
     }
 }

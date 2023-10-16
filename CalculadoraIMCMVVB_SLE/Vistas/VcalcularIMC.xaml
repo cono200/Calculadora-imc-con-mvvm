@@ -24,7 +24,7 @@
                 <Entry  Grid.Column="1" Grid.Row="1" Margin="0,0,50,0" Placeholder="Altura" x:Name="Altura"  Keyboard="Numeric" Text="{Binding Altura}"/>
 
                 <Entry   Grid.Column="0" Grid.Row="3" Placeholder="IMC" x:Name="IMC" StyleId="resultado"   IsEnabled="False" HorizontalOptions="Center" Grid.ColumnSpan="2"  FontSize="30" Text="{Binding Imc}"/>
-                <label Text="{Binding Mensaje}"/>
+                <Label Text="{Binding Mensaje}" ></Label>
             </Grid>
             <Grid>
                 <Button  Grid.Column="0"  Grid.Row="2" BackgroundColor="Red" TextColor="Yellow" FontSize="36"  CornerRadius="20" Text="Calcular IMC"  Command="{Binding CalcularIMCcommand}"/>
