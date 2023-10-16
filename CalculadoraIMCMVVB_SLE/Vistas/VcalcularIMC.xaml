@@ -2,8 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CalculadoraIMCMVVB_SLE.Vistas.VcalcularIMC">
+
+
     <ContentPage.Resources>
-        <StyleSheetExtension Source="/CSS\CalcularIMCStyle.css"/>
+        <StyleSheetExtension Source="/estilo\estilo.css"/>
     </ContentPage.Resources>
 
 
@@ -17,14 +19,23 @@
             <Grid >
 
                 <Label  Grid.Column="0" Grid.Row="0" Margin="10,0,0,5" FontSize="25"  Text="Peso"/>
-                <Entry   Grid.Column="1"  Grid.Row="0"  Placeholder="Peso" Margin="0,0,50,0"   x:Name="Peso" Keyboard="Numeric"/>
+                <Entry   Grid.Column="1"  Grid.Row="0"  Placeholder="Peso" Margin="0,0,50,0"   x:Name="Peso" Keyboard="Numeric" Text="{Binding Peso}"/>
                 <Label   Grid.Column="0" Grid.Row="1"  Margin="10,0,0,5"  FontSize="25"   Text="Altura"/>
-                <Entry  Grid.Column="1" Grid.Row="1" Margin="0,0,50,0" Placeholder="Altura" x:Name="Altura"  Keyboard="Numeric"/>
+                <Entry  Grid.Column="1" Grid.Row="1" Margin="0,0,50,0" Placeholder="Altura" x:Name="Altura"  Keyboard="Numeric" Text="{Binding Altura}"/>
 
-                <Entry   Grid.Column="0" Grid.Row="3" Placeholder="IMC" x:Name="IMC" StyleId="resultado"   IsEnabled="False" HorizontalOptions="Center" Grid.ColumnSpan="2"  FontSize="30"/>
+                <Entry   Grid.Column="0" Grid.Row="3" Placeholder="IMC" x:Name="IMC" StyleId="resultado"   IsEnabled="False" HorizontalOptions="Center" Grid.ColumnSpan="2"  FontSize="30" Text="{Binding Imc}"/>
+                <label Text="{Binding Mensaje}"/>
             </Grid>
             <Grid>
-                <Button  Grid.Column="0"  Grid.Row="2" Clicked="Button_Clicked" BackgroundColor="Red" TextColor="Yellow" FontSize="36"  CornerRadius="20" Text="Calcular IMC" />
+                <Button  Grid.Column="0"  Grid.Row="2" BackgroundColor="Red" TextColor="Yellow" FontSize="36"  CornerRadius="20" Text="Calcular IMC"  Command="{Binding CalcularIMCcommand}"/>
             </Grid>
-</ContentPage>
+
         </StackLayout>
+
+
+
+
+
+    </StackLayout>
+
+</ContentPage>

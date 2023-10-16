@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalculadoraIMCMVVB_SLE.Vistas;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace CalculadoraIMCMVVB_SLE
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new VcalcularIMC();
         }
 
         protected override void OnStart()

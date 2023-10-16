@@ -80,7 +80,7 @@ namespace CalculadoraIMCMVVB_SLE.VistaModelo
                 Mensaje = "Obesidad";
             }
 
-
+            DisplayAlert("", Mensaje, "Salir");
 
 
             

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalculadoraIMCMVVB_SLE.VistaModelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace CalculadoraIMCMVVB_SLE.Vistas
         public VcalcularIMC()
         {
             InitializeComponent();
+            BindingContext = new VMcalcularIMC(navigation);
         }
     }
 }
