@@ -2,11 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CalculadoraIMCMVVB_SLE.Vistas.VcalcularIMC">
-    <ContentPage.Content>
+    <ContentPage.Resources>
+        <StyleSheetExtension Source="/CSS\CalcularIMCStyle.css"/>
+    </ContentPage.Resources>
+
+
+
+    <StackLayout >
+
+        <Frame   StyleClass="titulo" >
+            <Label Text="Calculadora IMC" HorizontalTextAlignment="Center" StyleId="encabezado" />
+        </Frame>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+            <Grid >
+
+                <Label  Grid.Column="0" Grid.Row="0" Margin="10,0,0,5" FontSize="25"  Text="Peso"/>
+                <Entry   Grid.Column="1"  Grid.Row="0"  Placeholder="Peso" Margin="0,0,50,0"   x:Name="Peso" Keyboard="Numeric"/>
+                <Label   Grid.Column="0" Grid.Row="1"  Margin="10,0,0,5"  FontSize="25"   Text="Altura"/>
+                <Entry  Grid.Column="1" Grid.Row="1" Margin="0,0,50,0" Placeholder="Altura" x:Name="Altura"  Keyboard="Numeric"/>
+
+                <Entry   Grid.Column="0" Grid.Row="3" Placeholder="IMC" x:Name="IMC" StyleId="resultado"   IsEnabled="False" HorizontalOptions="Center" Grid.ColumnSpan="2"  FontSize="30"/>
+            </Grid>
+            <Grid>
+                <Button  Grid.Column="0"  Grid.Row="2" Clicked="Button_Clicked" BackgroundColor="Red" TextColor="Yellow" FontSize="36"  CornerRadius="20" Text="Calcular IMC" />
+            </Grid>
 </ContentPage>
+        </StackLayout>
